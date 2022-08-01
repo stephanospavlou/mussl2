@@ -15,7 +15,7 @@ func main() {
         fmt.Println(usageMsg)
         return
     } else {
-        fmt.Println("Parsing file: " + os.Args[1])
+        //fmt.Println("Parsing file: " + os.Args[1])
         parse.Parse(os.Args[1])
     }
 }

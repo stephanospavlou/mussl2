@@ -55,12 +55,13 @@ func Parse(file string) {
         }
     }
 
-    for i := 0; i < len(tok); i++ {
-        fmt.Println(tok[i])
-    }
+    //for i := 0; i < len(tok); i++ {
+        //fmt.Println(tok[i])
+    //}
 
     topList := climbToTopList(curList)
-    fmt.Println(expressionToString(topList))
+    //fmt.Println(expressionToString(topList))
 
-    fmt.Println("Result of script interpretation: " + EvalExpression(topList))
+    //fmt.Println("Result of script interpretation: " + EvalExpression(topList))
+    _ = EvalExpression(topList)
 }
