@@ -1,7 +1,9 @@
 package builtins
 
 import (
+    "bufio"
     "fmt"
+    "os"
     "strconv"
 )
 
@@ -27,9 +29,29 @@ func Subtract(nums ...string) string {
     return strconv.Itoa(total)
 }
 
+func Multiply(nums ...string) string {
+    total := 1
+
+    for _, num := range nums { 
+        rNum, _ := strconv.Atoi(num) 
+        total = total * rNum 
+    }
+
+    return strconv.Itoa(total)
+}
+
 func Equals(args ...string) string {
     arg1, arg2 := args[0], args[1]
     if arg1 == arg2 {
+        return "SUCCESS"
+    } else {
+        return "FAILURE"
+    }
+}
+
+func NotEquals(args ...string) string {
+    arg1, arg2 := args[0], args[1]
+    if arg1 != arg2 {
         return "SUCCESS"
     } else {
         return "FAILURE"
@@ -43,6 +65,12 @@ func Print(outs ...string) string {
     }
     fmt.Println(s)
     return "SUCCESS"
+}
+
+func Get() string {
+    s := bufio.NewScanner(os.Stdin)
+    s.Scan()
+    return s.Text()
 }
 
 func Prog(args ...string) string {
